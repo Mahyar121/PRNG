@@ -48,5 +48,18 @@ def main():
 
     prng.seed(seed)
     randomNumber = prng.next_prn()
-    while(loop):
 
+    while(loop):
+        userGuess.append(int(input(">> ")))
+        if( (userGuess[count] > randomNumber) or (userGuess[count] < randomNumber) ):
+            if(GuessHandler(userGuess, count, randomNumber)):
+                print("warmer")
+            else:
+                print("colder")
+        if (userGuess[count] == randomNumber):
+            print("winner")
+        if (userGuess[count] == 0):
+            loop = False
+        count += 1
+if __name__ == "__main__":
+    main()
