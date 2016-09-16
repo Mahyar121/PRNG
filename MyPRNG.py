@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import sys
-
+# Author: Mahyar Haji Babaie
+# Email: mahyarhajibabaie@csu.fullerton.edu
+# This file generates a random number
 class MyPRNG:
     def __init__(self): #zero-arg constructor for the class
         self.a = 16807 #7^5
