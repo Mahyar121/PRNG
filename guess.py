@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import math
+import getopt
 from MyPRNG import *
 
 # EX. guess.py -h -v -s seed -m 1 -M 400
@@ -48,9 +49,10 @@ def main():
 
     prng.seed(seed)
     randomNumber = prng.next_prn()
-
     while(loop):
-        userGuess.append(int(input(">> ")))
+        response = int(input("Guess a number or press 0 to quit "))
+        userGuess.append(response)
+        print(randomNumber)
         if( (userGuess[count] > randomNumber) or (userGuess[count] < randomNumber) ):
             if(GuessHandler(userGuess, count, randomNumber)):
                 print("warmer")
