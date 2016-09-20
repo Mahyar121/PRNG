@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 import math
+import time
 from MyPRNG import *
 # Author: Mahyar Haji Babaie
 # Email: mahyarhajibabaie@csu.fullerton.edu
@@ -34,9 +35,9 @@ def main():
     userGuess = [] #initliazing a list to store the user guesses
     minimum = 1 #This variable will accept the command line argument for -m
     maximum = 1000 #This variable will accept the command line argument for -M
-    seed = 101 #This variable will accept the command line argument for -s seed
+    seed = time.time() #This variable will accept the command line argument for -s seed
     index = 0 #This is used to loop through the sys.argv[index]
-
+    guessNumber = 0
     for currentArg in sys.argv:
         if (currentArg == "-h"):
             Usage() #will print the help features
@@ -46,7 +47,7 @@ def main():
             if (index+1 < len(sys.argv)):
                 seed = int(sys.argv[index + 1]) #if there is a seed set it to the variable
             else:
-                seed = 101 #otherwise use this default value
+                seed = time.time(); #otherwise use this default value
         elif (currentArg == "-m"):
             if (index+1 < len(sys.argv)):
                 minimum = int(sys.argv[index + 1]) #if there is a minimum number set it to the variable
@@ -63,6 +64,11 @@ def main():
     prng.seed(seed)
     for x in range (101):
         randomNumber = prng.next_prn()
+    guessNumber = (maximum - minimum) + 1
+    guessNumber = randomNumber % guessNumber
+    guessNumber = guessNumber + minimum
+    randomNumber = guessNumber
+
     while(loop):
         response = int(input("Guess a number or press 0 to quit "))
         userGuess.append(response)
