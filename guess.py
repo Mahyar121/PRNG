@@ -25,7 +25,8 @@ def GuessHandler(userGuess,count, randomNumber):
 # This function is invoked when -h is involved in the commandline for when a user needs help on how to use the program
 def Usage():
     print("Usage: ", sys.argv[0], "[-h] [-v] [-s seed] [-m min number] [-M max number")
-    print("This program will create a game which runs the PRNG to pick the 101st random number for the user to guess")
+    print("This program will create a game which runs the PRNG to pick the 101st random number for the user to guess.")
+    print("If you don't use the command line, the answer could have up to 2 decimal places ex. 100.25")
 
 def main():
     prng = MyPRNG() #declaring a variable to handle MyPRNG class functions
