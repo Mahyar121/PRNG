@@ -3,7 +3,7 @@ Project #1: Guessing Game
 
 	This program will create a game which will run the Pseudo-Random Number Generator to pick the 101st random number for the user to guess. Users can use a command line option to change the value of the seed integer. The game will keep repeating until the user picks the correct answer or gives up. If the user guesses a number closer to the random number, then they will get a message saying warmer. Otherwise they will get a message saying colder. If the user types 0 they can give up.
 
-Prerequisities 
+Prerequisites 
 ---------------
 Linux OS if you want to run a command line in the terminal
 OS that supports python
